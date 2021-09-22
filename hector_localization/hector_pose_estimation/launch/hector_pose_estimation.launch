@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="hector_pose_estimation" type="pose_estimation" name="hector_pose_estimation" />
+  <node pkg="rviz" type="rviz" name="hector_pose_estimation_rviz" args="-d $(find hector_pose_estimation)/rviz_cfg/hector_pose_estimation.rviz" />
+</launch>

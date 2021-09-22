@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+         
+  <xacro:property name="M_PI" value="3.14159" />
+
+  <xacro:property name="x_vision_box_front" value="0.084" />
+  <xacro:property name="x_pos_sensor_head_rel_to_base_link" value="${x_vision_box_front-0.027}" />
+
+  <xacro:property name="laser1RollServo_height" value="0.04" /> <!--between base_link and laser1 roll axis-->
+
+
+  <xacro:property name="cameraYawServo_size_z" value="0.082" /> <!--between upper edge of top and camera pitch axis-->
+  <xacro:property name="cameraYawServo_x_position" value="-0.027" /> <!--between front edge of top and camera yaw axis-->
+
+
+  <xacro:property name="camera_size_y" value="0.02" />
+  <xacro:property name="camera_size_z" value="0.02" />
+
+  <xacro:property name="camera_y_position" value="-0.049" />
+  
+  <xacro:property name="top_box_pos_x" value="-0.0085" />
+  <xacro:property name="top_box_pos_y" value="0.0" />
+  <xacro:property name="top_box_pos_z" value="0.0675" />
+  <xacro:property name="top_box_size_x" value="0.18100" />
+  <xacro:property name="top_box_size_y" value="0.21" />
+  <xacro:property name="top_box_size_z" value="0.133" />
+
+  <xacro:property name="kinect_yaw_position" value="0.0" /> 
+
+</robot>

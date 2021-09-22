@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+         
+  <xacro:property name="socket_size_x" value="0.31" />
+  <xacro:property name="socket_size_y" value="0.14" />
+  <xacro:property name="socket_size_z" value="0.005" />
+  <xacro:property name="socket_height" value="0.185" /> <!--between ground and lower edge of socket-->
+
+  <xacro:property name="base_size_x" value="0.31" />
+  <xacro:property name="base_size_y" value="0.14" />
+  <xacro:property name="base_size_z" value="0.06" />
+
+  <xacro:property name="ultrasound_z_position" value="0.015" /> <!--between upper edge of socket and center of ultrasound sensor-->
+  <xacro:property name="middle_ultrasound_x_position" value="-0.068" /> <!--between rear edge of socket and middle ultrasound sensor-->
+  <xacro:property name="sideways_ultrasound_x_position" value="-0.055" /> <!--between rear edge of socket and left/rigth ultrasound sensor-->
+  <xacro:property name="sideways_ultrasound_y_position" value="0.085" /> <!--between x-axis of socket and left/rigth ultrasound sensor-->
+  <xacro:property name="sideways_ultrasound_theta" value="1" /> <!--angel between reverse x-axis and left/rigth ultrasound sensor z-axis-->
+
+  <xacro:property name="laser0PitchServo_size_x" value="0.05" />
+  <xacro:property name="laser0PitchServo_size_y" value="0.03" />
+  <xacro:property name="laser0PitchServo_size_z" value="0.03" />
+  <!--<xacro:property name="laser0PitchServo_x_offset" value="0.07" />--> <!--between front edge of base and laser0 pitch axis-->
+  <!--<xacro:property name="laser0PitchServo_z_offset" value="-0.03" />--> <!--between lower edge of base and laser0 pitch axis-->
+
+  <xacro:property name="laser0_size_x" value="0.05" />
+  <xacro:property name="laser0_size_y" value="0.05" />
+  <xacro:property name="laser0_size_z" value="0.08" />
+  <!--<xacro:property name="laser0_x_offset" value="0.023" />--> <!--between laser0 pitch axis and laser0 center-->
+  <xacro:property name="laser0_plane_height" value="0.08" /> <!--between laser0 pitch axis and laserscan plane-->
+
+  <!--<xacro:property name="top_size_x" value="0.185" />-->
+  <xacro:property name="top_size_y" value="0.21" />
+  <xacro:property name="top_size_z" value="0.135" />
+
+  <xacro:property name="laser1RollServo_size_x" value="0.064" /> <!--between front edge of top and laser1 pitch axis-->
+  <xacro:property name="laser1RollServo_size_y" value="0.03" />
+  <xacro:property name="laser1RollServo_size_z" value="0.04" />
+  <!--<xacro:property name="laser1RollServo_height" value="0.039" />--> <!--between lower edge of top and laser1 roll axis-->
+
+  <xacro:property name="laser1_size_x" value="0.05" />
+  <xacro:property name="laser1_size_y" value="0.05" />
+  <xacro:property name="laser1_size_z" value="0.09" />
+  <xacro:property name="laser1_plane_height" value="0.085" /> <!--between laser1 roll axis and laserscan plane-->
+  <xacro:property name="laser1_center_x_offset" value="0.03" /> <!-- between laser1 pitch axis and laser1 center-->
+
+  <xacro:property name="cameraYawServo_size_x" value="0.04" />
+  <xacro:property name="cameraYawServo_size_y" value="0.03" />
+  <!--<xacro:property name="cameraYawServo_size_z" value="0.091" />--> <!--between upper edge of top and camera pitch axis-->
+  <!--<xacro:property name="cameraYawServo_x_position" value="-0.027" />--> <!--between front edge of top and camera yaw axis-->
+
+  <xacro:property name="camera_size_x" value="0.05" />
+  <!--<xacro:property name="camera_size_y" value="0.02" />-->
+  <!--<xacro:property name="camera_size_z" value="0.02" />-->
+  <xacro:property name="camera_x_position" value="0.02" /> <!--between intersection point of yaw and pitch axis and center of camera lense-->
+  <!--<xacro:property name="camera_y_position" value="-0.049" />-->
+  <xacro:property name="camera_z_position" value="0.001" />
+
+<!--  <xacro:property name="infrared_size_x" value="0.09" />
+  <xacro:property name="infrared_radius" value="0.015" />
+  <xacro:property name="infrared_x_position" value="0.03" />--> <!--between intersection point of yaw and pitch axis and center of infrared lense-->
+  <!--<xacro:property name="infrared_y_position" value="0.04" />-->
+  <xacro:property name="infrared_x_position" value="0.0505" /> <!--5.8cm between front and servo axis-->
+  <xacro:property name="infrared_y_position" value="0.046" />
+  <xacro:property name="infrared_z_position" value="-0.0025" />
+
+  <xacro:property name="kinect_size_x" value="0.06" />
+  <xacro:property name="kinect_size_y" value="0.28" />
+  <xacro:property name="kinect_size_z" value="0.04" />
+  <xacro:property name="kinect_x_position" value="0.055" /> <!--between intersection point of yaw and pitch axis and center of camera lense-->
+  <xacro:property name="kinect_y_position" value="0.0" />
+  <xacro:property name="kinect_z_position" value="0.055" />
+  <xacro:property name="kinect_roll_position" value="0" />
+  <xacro:property name="kinect_pitch_position" value="0" />
+<!--   <xacro:property name="kinect_yaw_position" value="0" />/>-->
+
+</robot>

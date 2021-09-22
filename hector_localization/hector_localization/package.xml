@@ -1,0 +1,35 @@
+<package>
+  <name>hector_localization</name>
+  <version>0.4.0</version>
+  <description>
+    The hector_localization stack is a collection of packages, that provide the full 6DOF pose of a robot or platform.
+    It uses various sensor sources, which are fused using an Extended Kalman filter.
+
+    Acceleration and angular rates from an inertial measurement unit (IMU) serve as primary measurements.
+    The usage of other sensors is application-dependent. The hector_localization stack currently supports
+    GPS, magnetometer, barometric pressure sensors and other external sources that provide a geometry_msgs/PoseWithCovariance
+    message via the poseupdate topic.
+  </description>
+  <maintainer email="joh@nnes-meyer.de">Johannes Meyer</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/hector_localization</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <author email="joh@nnes-meyer.de">Johannes Meyer</author>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>message_to_tf</run_depend>
+  <!-- <run_depend>rtt_hector_pose_estimation</run_depend> -->
+  <run_depend>hector_pose_estimation</run_depend>
+  <run_depend>hector_pose_estimation_core</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+
+</package>

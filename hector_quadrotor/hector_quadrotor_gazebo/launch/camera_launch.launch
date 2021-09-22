@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+  <!-- Start Gazebo with wg world running in (max) realtime -->
+  <include file="$(find hector_gazebo_worlds)/launch/willow_garage.launch"/>
+   
+  <!-- Spawn simulated quadrotor uav -->
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch" >
+    <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/> 
+  </include>
+  
+  <include file="$(find takeoff_land)/launch/takeoff_land.launch"/>
+  
+  <!-- <include file="$(find publish_navdata)/launch/publish_navdata.launch"/> -->
+   
+</launch>

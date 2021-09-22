@@ -1,0 +1,26 @@
+<package>
+  <name>hector_gazebo_thermal_camera</name>
+  <version>0.5.1</version>
+  <description>hector_gazebo_thermal_camera provides a gazebo plugin that produces simulated thermal camera images. The plugin uses modified code from the gazebo_ros_camera plugin.</description>
+  <maintainer email="johannes@intermodalics.eu">Johannes Meyer</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/hector_gazebo_thermal_camera</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <author email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</author>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>gazebo_plugins</build_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>roscpp</run_depend>
+  <run_depend>gazebo</run_depend>
+  <run_depend>gazebo_plugins</run_depend>
+
+</package>

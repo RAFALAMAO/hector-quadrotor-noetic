@@ -1,0 +1,26 @@
+<package>
+  <name>hector_components_description</name>
+  <version>0.4.2</version>
+  <description>hector_components_description contains URDF xacro macros for robot components, so they are easily attachable to robot models.</description>
+  <maintainer email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/hector_components_description</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <author email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</author>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+  
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>xacro</run_depend>
+  <run_depend>hector_sensors_description</run_depend>
+  <run_depend>hector_xacro_tools</run_depend>
+
+  <!-- Dependencies needed only for running tests. -->
+
+</package>

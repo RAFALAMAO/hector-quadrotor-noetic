@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<robot name="checkerboard" xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
+  
+  <xacro:property name="checkerbox_side_length" value="0.025" />
+  <xacro:property name="dist_from_hand_joint" value="0.13" />
+  
+  <xacro:property name="scale" value="${checkerbox_side_length/0.08533}" />    
+  <xacro:property name="z_translation" value="${(checkerbox_side_length/0.08533)/-2.6042}" />
+  <xacro:property name="y_translation" value="${(checkerbox_side_length/0.08533)*0.993*0.5+dist_from_hand_joint}" />
+  
+  
+  <!--    <xacro:property name="z_translation" value="${scale/2.6042}" />-->
+  <!--    <xacro:property name="z_translation" value="${checkerbox_side_length}" />-->
+  
+  
+  <xacro:macro name="checkerboard" params="parent name scaling *origin">
+    
+    <link name="${name}_checkerboard_link">
+      <inertial>
+	      <mass value="0.5" />
+	      <origin xyz="0 0 0" rpy="0 -0 0" />
+	      <inertia ixx="0.00265" ixy="0" ixz="0" iyy="0.00446" iyz="0" izz="0.00446" />
+      </inertial>
+      <visual>
+	      <origin xyz="0 0 0" rpy="0 -0 0" />
+	      <geometry>
+	        <mesh filename="package://hector_components_description/meshes/checkerboard/checkerboard.dae" scale="${scaling} ${scaling} ${scaling}" />
+	      </geometry>
+      </visual>
+      <collision>
+	      <origin xyz="0 0 0" rpy="0 -0 0" />
+	      <geometry>
+	        <mesh filename="package://hector_components_description/meshes/checkerboard/checkerboard.dae" scale="${scaling} ${scaling} ${scaling}" />
+	      </geometry>
+       </collision>
+    </link>
+    
+    <joint name="${name}_checkerboard_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${name}_checkerboard_link"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+    
+  </xacro:macro>
+  
+</robot>

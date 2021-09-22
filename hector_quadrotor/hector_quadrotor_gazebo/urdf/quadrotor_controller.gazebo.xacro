@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="quadrotor_controller">
+    <gazebo>
+      <plugin name="quadrotor_controller" filename="libgazebo_ros_control.so">
+        <controlPeriod>0.01</controlPeriod>
+        <robotSimType>hector_quadrotor_controller_gazebo/QuadrotorHardwareSim</robotSimType>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+</robot>

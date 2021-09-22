@@ -1,0 +1,47 @@
+<package>
+  <name>rtt_hector_pose_estimation</name>
+  <version>0.2.0</version>
+  <description>
+    An RTT TaskContext that runs hector_pose_estimation_core.
+  </description>
+  <maintainer email="joh@nnes-meyer.de">Johannes Meyer</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/hector_pose_estimation_rtt</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <author email="joh@nnes-meyer.de">Johannes Meyer</author>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+  <build_depend>hector_pose_estimation_core</build_depend>
+  <build_depend>rtt_rosnode</build_depend>
+  <build_depend>rtt_sensor_msgs</build_depend>
+  <build_depend>rtt_geometry_msgs</build_depend>
+  <build_depend>rtt_nav_msgs</build_depend>
+  <build_depend>rtt_std_msgs</build_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>hector_pose_estimation_core</run_depend>
+  <run_depend>rtt_rosnode</run_depend>
+  <run_depend>rtt_sensor_msgs</run_depend>
+  <run_depend>rtt_geometry_msgs</run_depend>
+  <run_depend>rtt_nav_msgs</run_depend>
+  <run_depend>rtt_std_msgs</run_depend>
+
+  <!-- Dependencies needed only for running tests. -->
+
+  <export>
+    <rtt_ros>
+      <plugin_depend>rtt_rosnode</plugin_depend>
+      <plugin_depend>rtt_sensor_msgs</plugin_depend>
+      <plugin_depend>rtt_geometry_msgs</plugin_depend>
+      <plugin_depend>rtt_nav_msgs</plugin_depend>
+      <plugin_depend>rtt_std_msgs</plugin_depend>
+    </rtt_ros>
+  </export>
+
+</package>

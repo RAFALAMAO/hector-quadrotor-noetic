@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Quadrotor Propulsion -->
+  <xacro:macro name="quadrotor_propulsion">
+    <gazebo>
+      <plugin name="quadrotor_propulsion" filename="libhector_gazebo_quadrotor_propulsion.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <bodyName>base_link</bodyName>
+        <frameId>$(arg base_link_frame)</frameId>
+        <controlRate>100.0</controlRate>
+        <!-- <controlTolerance>0.01</controlTolerance> -->
+        <controlDelay>0.01</controlDelay>
+        <motorStatusRate>100.0</motorStatusRate>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+
+</robot>
+

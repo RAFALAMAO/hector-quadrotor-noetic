@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="add_optical_frame" params="name">
+    <joint name="${name}_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="${-M_PI/2} 0.0 ${-M_PI/2}" />
+      <parent link="${name}_frame" />
+      <child link="${name}_optical_frame"/>
+    </joint>
+    
+    <link name="${name}_optical_frame" />
+  </xacro:macro>
+
+</robot>

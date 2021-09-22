@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:include filename="$(find hector_xacro_tools)/urdf/inertia_tensors.urdf.xacro"/>
+  <xacro:include filename="$(find hector_xacro_tools)/urdf/sensor_macros.urdf.xacro"/>
+  <xacro:include filename="$(find hector_sensors_description)/urdf/thermaleye_camera.urdf.xacro"/>
+  <xacro:include filename="$(find hector_sensors_description)/urdf/asus_camera.urdf.xacro"/>
+  <xacro:include filename="$(find hector_sensors_description)/urdf/hokuyo_utm30lx.urdf.xacro" />
+  <xacro:include filename="$(find hector_components_description)/urdf/vision_box_common.gazebo.xacro" />
+  <xacro:include filename="$(find hector_components_description)/urdf/vision_box_common_dimensions.urdf.xacro" />
+  
+  <!--<xacro:include filename="$(find hector_components_description)/urdf/vision_box_dimensions_hector2.urdf.xacro" />-->
+  <xacro:macro name="vision_box" params="box_type parent *origin">
+    
+    <joint name="top_box_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="top_box_link"/>
+    </joint>
+    
+    <link name="top_box_link">
+      <xacro:inertial_cuboid mass="0.1" x_length="0.3" y_length="0.15" z_length="0.2"/>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://hector_components_description/meshes/vision_box/${box_type}_top_box$(optenv TEST_SELF_FILTER).dae"/>
+          <!--<box size="0.001 0.01 0.01" />-->
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="${top_box_pos_x} ${top_box_pos_y} ${top_box_pos_z}" rpy="0 0 0"/>
+        <geometry>
+          <!--<mesh filename="package://monstertruck_urdf/Media/meshes/$(env ROBOT)_top_box.stl"/>-->
+          <box size="${top_box_size_x} ${top_box_size_y} ${top_box_size_z}"/>
+          <!--<box size="0.001 0.01 0.01" />-->
+        </geometry>
+      </collision>
+    </link>
+    
+    <joint name="laser1/x" type="revolute">
+      <origin xyz="${x_vision_box_front} 0 ${laser1RollServo_height}" rpy="0 0 0"/>
+      <parent link="top_box_link"/>
+      <child link="laser1RollServo"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="${-M_PI/2}" upper="${M_PI/2}" effort="100" velocity="100"/>
+    </joint>
+    
+    <link name="laser1RollServo">
+      <xacro:inertial_sphere mass="0.1" diameter="0.07"/>
+      <visual>
+        <origin xyz="${laser1RollServo_size_x/2} 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${laser1RollServo_size_x} ${laser1RollServo_size_y} ${laser1RollServo_size_z}"/>
+        </geometry>
+        <material name="Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="${laser1RollServo_size_x/2} 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${laser1RollServo_size_x} ${laser1RollServo_size_y} ${laser1RollServo_size_z}"/>
+        </geometry>
+      </collision>
+    </link>
+    
+    <joint name="laser1/y" type="revolute">
+      <origin xyz="${laser1RollServo_size_x} 0 0" rpy="0 0 0"/>
+      <parent link="laser1RollServo"/>
+      <child link="laser1_link"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-M_PI/2}" upper="${M_PI/2}" effort="100" velocity="100"/>
+    </joint>
+    
+    <link name="laser1_link">
+      <xacro:inertial_sphere mass="0.1" diameter="0.07"/>
+      <visual>
+        <origin xyz="0.0 0.0 ${laser1_size_z/2}" rpy="0 0 0"/>
+        <geometry>
+          <!--<box size="${laser1_size_x} ${laser1_size_y} ${laser1_size_z}" />-->
+          <box size="${laser1_size_x} ${laser1_size_y} 0.01"/>
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 ${laser1_size_z/2}" rpy="0 0 0"/>
+        <geometry>
+          <!--<box size="${laser1_size_x} ${laser1_size_y} ${laser1_size_z}" />-->
+          <box size="${laser1_size_x} ${laser1_size_y} 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+    
+    <joint name="camera/z" type="revolute">
+      <origin xyz="${x_pos_sensor_head_rel_to_base_link} 0 0.137" rpy="0 0 0"/>
+      <parent link="top_box_link"/>
+      <child link="cameraYawServo"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-M_PI*3/4}" upper="${M_PI*3/4}" effort="100" velocity="100"/>
+    </joint>
+    
+    <link name="cameraYawServo">
+      <xacro:inertial_sphere mass="0.1" diameter="0.07"/>
+      <visual>
+        <origin xyz="0.0 0.0 ${cameraYawServo_size_z/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${cameraYawServo_size_x} ${cameraYawServo_size_y} ${cameraYawServo_size_z}"/>
+        </geometry>
+        <material name="Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 ${cameraYawServo_size_z/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${cameraYawServo_size_x} ${cameraYawServo_size_y} ${cameraYawServo_size_z}"/>
+        </geometry>
+      </collision>
+    </link>
+    
+    <joint name="camera/y" type="revolute">
+      <origin xyz="0 0 ${cameraYawServo_size_z}" rpy="0 0 0"/>
+      <parent link="cameraYawServo"/>
+      <child link="mounting_link"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-M_PI/2}" upper="${M_PI/2}" effort="100" velocity="100"/>
+    </joint>
+    <link name="mounting_link">
+      <xacro:inertial_sphere mass="0.05" diameter="0.07"/>
+    </link>
+    
+    <xacro:thermaleye_camera_model name="infrared" parent="mounting_link">
+      <origin xyz="${infrared_x_position} ${infrared_y_position} ${infrared_z_position}" rpy="0 0 0"/>
+    </xacro:thermaleye_camera_model>
+    
+    <xacro:asus_camera_model name="openni" parent="mounting_link">
+      <origin xyz="${kinect_x_position} ${kinect_y_position}  ${kinect_z_position}" rpy="${kinect_roll_position} ${kinect_pitch_position} ${kinect_yaw_position}"/>
+    </xacro:asus_camera_model>
+    
+    <xacro:hokuyo_utm30lx name="laser1" parent="laser1_link" ros_topic="laser1/scan" update_rate="40" ray_count="1081" min_angle="135" max_angle="-135">
+      <origin xyz="${laser1_center_x_offset} 0 ${laser1_plane_height}" rpy="0 0 0"/>
+    </xacro:hokuyo_utm30lx>
+    
+    <xacro:vision_box_common_gazebo_plugins/>
+    
+    <!--   <xacro:include filename="$(find monstertruck_urdf)/hector/$(env ROBOT)_addons.urdf.xacro" />-->
+  </xacro:macro>
+</robot>

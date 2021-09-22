@@ -1,0 +1,1 @@
+- git: {local-name: src/hector_models, uri: 'https://github.com/tu-darmstadt-ros-pkg/hector_models.git', version: hydro-devel}

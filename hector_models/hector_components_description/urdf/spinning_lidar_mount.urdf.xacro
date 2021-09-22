@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:include filename="$(find hector_xacro_tools)/urdf/inertia_tensors.urdf.xacro" />
+
+  <xacro:property name="M_PI" value="3.14159265359"/>
+  
+  <xacro:macro name="spinning_lidar_macro" params="parent name angle_deg *origin">
+    
+    <joint name="${name}_spinning_lidar_root_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <axis xyz="0 1 0"/>
+      <parent link="${parent}"/>
+      <child link="${name}_spinning_lidar_root_link"/>
+    </joint>
+    
+    <link name="${name}_spinning_lidar_root_link">
+      <xacro:inertial_sphere_with_pose mass="0.01" diameter="0.03">
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      </xacro:inertial_sphere_with_pose>
+<!--      <collision name="collision">
+        <origin xyz="0.0 0.0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.015"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <origin xyz="0.0 0.0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.015"/>
+        </geometry>
+        <material name="DarkGrey">
+          <color rgba="0.3 0.3 0.3 1"/>
+        </material>
+      </visual>-->
+    </link>
+    
+    <joint name="${name}_spinning_lidar_spin_joint" type="continuous">
+      <parent link="${name}_spinning_lidar_root_link"/>
+      <child link="${name}_spinning_lidar_spin_link"/>
+      <origin xyz="0 0 0.00" rpy="0 ${0 * M_PI/180.0} 0"/>
+      <axis xyz="0 0 1" rpy="0 0 0"/>
+      <limit effort="1000" velocity="100"/>
+      <joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+    
+    <link name="${name}_spinning_lidar_spin_link">
+      <xacro:inertial_sphere_with_pose mass="0.01" diameter="0.03">
+        <origin xyz="0.0 0.0 -0.0" rpy="0 0 0"/>
+      </xacro:inertial_sphere_with_pose>
+<!--      <collision name="collision">
+        <origin xyz="0.0 0.0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.015"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <origin xyz="0.0 0.0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.015"/>
+        </geometry>
+        <material name="DarkGrey">
+          <color rgba="0.3 0.3 0.3 1"/>
+        </material>
+      </visual>-->
+    </link>
+    
+    <transmission name="${name}_spinning_lidar_spin_joint_transmssion">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${name}_spinning_lidar_spin_joint">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+      </joint>  
+      <actuator name="${name}_spinning_lidar_spin_joint_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission> 
+    
+    <!--
+    Remove gazebo tags for links that do not have visuals anymore.
+    See https://bitbucket.org/osrf/gazebo/issues/1728
+    <gazebo reference="${name}_spinning_lidar_root_link">
+      <material>Gazebo/Grey</material>
+    </gazebo>
+    
+    <gazebo reference="${name}_spinning_lidar_spin_link">
+      <material>Gazebo/Grey</material>
+    </gazebo>
+    -->
+    
+  </xacro:macro>
+</robot>
