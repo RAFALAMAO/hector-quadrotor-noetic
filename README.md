@@ -8,7 +8,6 @@ I take part of this from:
 1. You need to have this packages before install hector_quadrotor_noetic.
     
     * unique_identifier (Melodic version works):
-    
     `git clone https://github.com/ros-geographic-info/unique_identifier.git`
 
     * geographic_info:
