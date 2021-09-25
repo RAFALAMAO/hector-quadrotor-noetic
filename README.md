@@ -3,14 +3,14 @@
 !First version, please tell me the issues!
 
 I take part of this from:
-*https://bitbucket.org/theconstructcore/hector_quadrotor_sim/src/master/
+* https://bitbucket.org/theconstructcore/hector_quadrotor_sim/src/master/
 
 1. You need to have this packages before install hector_quadrotor_noetic.
     
-    *unique_identifier (Melodic version works):
+    * unique_identifier (Melodic version works):
     `git clone https://github.com/ros-geographic-info/unique_identifier.git`
 
-    *geographic_info:
+    * geographic_info:
     `git clone https://github.com/ros-geographic-info/geographic_info`
     
 2. Buid
