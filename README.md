@@ -28,4 +28,4 @@ Run a simulation by executing a launch file in hector_quadrotor_gazebo package (
 6. You can control it with teleop_twist_keyboard
 * `git clone https://github.com/ros-teleop/teleop_twist_keyboard`
 
-**:D **
+***:D ***
