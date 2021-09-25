@@ -19,8 +19,7 @@ I take part of this from:`https://bitbucket.org/theconstructcore/hector_quadroto
 
 4. Repeat step 2
 
-5. Run the simulation
-Run a simulation by executing a launch file in hector_quadrotor_gazebo package (only this works at the momment, but you can try the other ones): 
+5. Run a simulation by executing a launch file in hector_quadrotor_gazebo package (only this works at the momment, but you can try the other ones): 
 
 * `roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch`
 * `roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch`
