@@ -9,7 +9,7 @@ I take part of this from:`https://bitbucket.org/theconstructcore/hector_quadroto
 `git clone https://github.com/ros-geographic-info/unique_identifier.git`
 * geographic_info:
 `git clone https://github.com/ros-geographic-info/geographic_info`
-    
+
 2. Buid
 * `cd ~/catkin_ws`
 * `catkin_make`
@@ -19,7 +19,7 @@ I take part of this from:`https://bitbucket.org/theconstructcore/hector_quadroto
 
 4. Repeat step 2
 
-5. Run a simulation by executing a launch file in hector_quadrotor_gazebo package (only this works at the momment, but you can try the other ones): 
+5. Run a simulation by executing a launch file in "hector_quadrotor_gazebo" and "hector_quadrotor_demo" package (only this works at the momment, but you can try the other ones):
 
 * `roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch`
 * `roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch`
