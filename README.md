@@ -10,7 +10,7 @@ I take part of this from:`https://bitbucket.org/theconstructcore/hector_quadroto
 * geographic_info:
 `git clone https://github.com/ros-geographic-info/geographic_info`
 
-2. Buid
+2. Build
 * `cd ~/catkin_ws`
 * `catkin_make`
 
@@ -27,4 +27,7 @@ I take part of this from:`https://bitbucket.org/theconstructcore/hector_quadroto
 6. You can control it with teleop_twist_keyboard
 * `git clone https://github.com/ros-teleop/teleop_twist_keyboard`
 
-😊
+You can watch a video testing it:
+https://www.youtube.com/watch?v=-2IWfZjqoNc
+
+😊😊😊
