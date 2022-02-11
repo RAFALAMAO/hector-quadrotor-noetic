@@ -11,9 +11,7 @@
 You need the following packages before install hector_quadrotor_noetic.
 
 * unique_identifier (Melodic version works):
-    ```sh
-    git clone https://github.com/ros-geographic-info/unique_identifier.git
-    ```
+    ```sh git clone https://github.com/ros-geographic-info/unique_identifier.git```
     `git clone https://github.com/ros-geographic-info/unique_identifier.git`
 * geographic_info:
     `git clone https://github.com/ros-geographic-info/geographic_info`
