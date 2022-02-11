@@ -2,7 +2,7 @@
 
 ***.:: First version, please tell me the issues or help me to fix it ::.***
 
-I take part of this from The Construct [repo](https://bitbucket.org/theconstructcore/hector_quadrotor_sim/src/master/) and YouTube [chanel](https://www.youtube.com/channel/UCt6Lag-vv25fTX3e11mVY1Q).
+I take part of this from The Construct's [repo](https://bitbucket.org/theconstructcore/hector_quadrotor_sim/src/master/) and YouTube [chanel](https://www.youtube.com/channel/UCt6Lag-vv25fTX3e11mVY1Q).
 
 1. You need to have this packages before install hector_quadrotor_noetic.
 * unique_identifier (Melodic version works):
