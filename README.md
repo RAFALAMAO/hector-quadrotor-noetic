@@ -1,6 +1,6 @@
 # hector_quadrotor ported to ROS Noetic & Gazebo 11
 
-<img src="imgs/dron_photo.png" height="250"/> <img src="imgs/dron_photo.png" height="342"/>
+<img src="imgs/dron_photo.png" height="250"/> <img src="imgs/dron_photo_rviz.png" height="250"/>
 
 ***.:: First version, please tell me the issues or help me to fix it ::.***
 
