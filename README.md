@@ -1,4 +1,4 @@
-# hector_quadrotor ported to ROS Noetic and Gazebo 11
+# hector_quadrotor ported to ROS Noetic & Gazebo 11
 
 ***# First version, please tell me the issues or help me to fix it #***
 
