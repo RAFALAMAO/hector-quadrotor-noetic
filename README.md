@@ -21,8 +21,7 @@
 
 2| Build
 ```sh
-cd ~/catkin_ws
-catkin_make
+cd ~/catkin_ws && catkin_make
 ```
 
 3| Then clone hector_quadrotor_noetic.
