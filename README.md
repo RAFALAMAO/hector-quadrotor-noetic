@@ -1,8 +1,8 @@
-## hector_quadrotor ported to ROS Noetic with Gazebo 11
+# hector_quadrotor ported to ROS Noetic & Gazebo 11
 
-***# First version, please tell me the issues or help me to fix it #***
+***.:: First version, please tell me the issues or help me to fix it ::.***
 
-I take part of this from:`https://bitbucket.org/theconstructcore/hector_quadrotor_sim/src/master/`
+I take part of this from The Construct's [repo](https://bitbucket.org/theconstructcore/hector_quadrotor_sim/src/master/) and YouTube [chanel](https://www.youtube.com/channel/UCt6Lag-vv25fTX3e11mVY1Q).
 
 1. You need to have this packages before install hector_quadrotor_noetic.
 * unique_identifier (Melodic version works):
