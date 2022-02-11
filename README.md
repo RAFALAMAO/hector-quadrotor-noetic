@@ -33,7 +33,7 @@ git clone https://github.com/RAFALAMAO/hector_quadrotor_noetic.git
 
 ## Usage
 
-Run a simulation by executing a launch file in "hector_quadrotor_gazebo" and "hector_quadrotor_demo" package (only this works at the momment, but you can try the other ones):
+Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `hector_quadrotor_demo` packages (only this works at the momment, but you can try the other ones):
 
 * `roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch`
 * `roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch`
