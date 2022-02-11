@@ -37,6 +37,7 @@ Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `
 
 * `roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch`
 * `roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch`
+* `roslaunch hector_quadrotor_demo outdoor_flight_gazebo_no_rviz.launch`
 
 6| You can control it with teleop_twist_keyboard.
 * `git clone https://github.com/ros-teleop/teleop_twist_keyboard`
