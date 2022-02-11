@@ -8,7 +8,7 @@
 
 ## Requirements
 
-1| You need the following packages before install hector_quadrotor_noetic.
+__1__ You need the following packages before install hector_quadrotor_noetic.
 
 * unique_identifier (Melodic version works):
     ```sh
