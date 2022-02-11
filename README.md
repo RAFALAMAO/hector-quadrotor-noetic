@@ -33,7 +33,7 @@ IV. Repeat step II.
 
 ## Usage
 
-Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `hector_quadrotor_demo` packages (only this works at the momment, but you can try the other ones):
+Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `hector_quadrotor_demo` packages (only these work at the momment, but you can try the other ones):
 
 * `roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch`
 * `roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch`
