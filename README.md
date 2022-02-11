@@ -10,7 +10,7 @@ I took part of this from __The Construct's__ [repo](https://bitbucket.org/thecon
 
 I. You need the following packages before install `hector_quadrotor_noetic`.
 
-* unique_identifier (Melodic version works):
+* unique_identifier:
     ```sh
     git clone https://github.com/ros-geographic-info/unique_identifier.git
     ```
