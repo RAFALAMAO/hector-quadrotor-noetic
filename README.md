@@ -19,22 +19,26 @@
     git clone https://github.com/ros-geographic-info/geographic_info
     ```
 
-2| Build
+2| Build.
 ```sh
 cd ~/catkin_ws && catkin_make
 ```
 
-3| Then clone hector_quadrotor_noetic.
-* `git clone https://github.com/RAFALAMAO/hector_quadrotor_noetic.git`
+3| Clone hector_quadrotor_noetic.
+```sh
+git clone https://github.com/RAFALAMAO/hector_quadrotor_noetic.git
+```
 
-4| Repeat step 2
+4| Repeat step 2.
 
-5| Run a simulation by executing a launch file in "hector_quadrotor_gazebo" and "hector_quadrotor_demo" package (only this works at the momment, but you can try the other ones):
+## Usage
+
+Run a simulation by executing a launch file in "hector_quadrotor_gazebo" and "hector_quadrotor_demo" package (only this works at the momment, but you can try the other ones):
 
 * `roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch`
 * `roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch`
 
-6| You can control it with teleop_twist_keyboard
+6| You can control it with teleop_twist_keyboard.
 * `git clone https://github.com/ros-teleop/teleop_twist_keyboard`
 
 You can watch a video testing it:
