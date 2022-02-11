@@ -4,13 +4,16 @@
 
 ***.:: First version, please tell me the issues or help me to fix it ::.***
 
-I take part of this from The Construct's [repo](https://bitbucket.org/theconstructcore/hector_quadrotor_sim/src/master/) and YouTube [chanel](https://www.youtube.com/channel/UCt6Lag-vv25fTX3e11mVY1Q).
+<< I take part of this from The Construct's [repo](https://bitbucket.org/theconstructcore/hector_quadrotor_sim/src/master/) and YouTube [chanel](https://www.youtube.com/channel/UCt6Lag-vv25fTX3e11mVY1Q) >>.
 
-1. You need to have this packages before install hector_quadrotor_noetic.
+## Requirements
+
+You need the following packages before install hector_quadrotor_noetic.
+
 * unique_identifier (Melodic version works):
-`git clone https://github.com/ros-geographic-info/unique_identifier.git`
+    `git clone https://github.com/ros-geographic-info/unique_identifier.git`
 * geographic_info:
-`git clone https://github.com/ros-geographic-info/geographic_info`
+    `git clone https://github.com/ros-geographic-info/geographic_info`
 
 2. Build
 * `cd ~/catkin_ws`
