@@ -16,7 +16,7 @@ I. You need the following packages before install `hector_quadrotor_noetic`.
     ```
 * geographic_info:
     ```sh
-    git clone https://github.com/ros-geographic-info/geographic_info
+    git clone https://github.com/ros-geographic-info/geographic_info.git
     ```
 
 II. Build.
