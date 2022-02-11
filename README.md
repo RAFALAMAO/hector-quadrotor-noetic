@@ -19,7 +19,7 @@ __1__ You need the following packages before install hector_quadrotor_noetic.
     git clone https://github.com/ros-geographic-info/geographic_info
     ```
 
-2| Build.
+__2|__ Build.
 ```sh
 cd ~/catkin_ws && catkin_make
 ```
