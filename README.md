@@ -80,6 +80,6 @@ Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `
 
 Here is a [video](https://www.youtube.com/watch?v=-2IWfZjqoNc) testing it:
 
-<div style="display: flex; justify-content: center;">
+<p align="center">
     <a href="https://www.youtube.com/watch?v=-2IWfZjqoNc"><img src="imgs/gif.GIF"/></a>
-</div>
+</p>
