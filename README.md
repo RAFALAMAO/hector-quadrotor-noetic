@@ -59,17 +59,17 @@ Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `
     ```sh
     git clone https://github.com/ros-teleop/teleop_twist_keyboard
     ```
-* GUI, shared by my friend [__anderdefector__](https://github.com/anderdefector) and adapted by me. You can find the code in __hector_gui/src__ folder of this repo.
-    * Run the following for one dron gui:
+* User interface, shared by my friend [__anderdefector__](https://github.com/anderdefector) and adapted by me. You can find the code in __hector_ui/src__ folder of this repo.
+    * Run the following for one dron ui:
         ```sh
         rosrun hector_ui ui_hector_quad.py
         ```
     * If you are working with `two_drones_empty.launch`.
-        * Run the following for leader dron gui:
+        * Run the following for leader dron ui:
             ```sh
             rosrun hector_ui ui_hector_quad_leader.py
             ```
-        * Run the following for follower dron gui:
+        * Run the following for follower dron ui:
             ```sh
             rosrun hector_ui ui_hector_quad_follower.py
             ```
