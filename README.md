@@ -1,8 +1,8 @@
 # hector_quadrotor ported to ROS Noetic & Gazebo 11
 
-<div style="display: flex; justify-content: space-evenly">
+<p align="center">
     <img src="imgs/dron_photo.png" height="250"/> <img src="imgs/dron_photo_rviz.png" height="250"/>
-</div>
+</p>
 
 ***.:: First version, please tell me the issues or help me to fix it ::.***
 
