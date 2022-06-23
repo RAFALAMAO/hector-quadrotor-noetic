@@ -138,13 +138,13 @@ def left_fun():
     vel_pub.publish(vel_msg)
 
 def cw_fun():
-    setText("CW")
+    setText("Turn Right")
     vel_msg = Twist()
     vel_msg.angular.z = float(-1.0)
     vel_pub.publish(vel_msg)
 
 def ccw_fun():
-    setText("CCW")
+    setText("Turn Left")
     vel_msg = Twist()
     vel_msg.angular.z = float(1.0)
     vel_pub.publish(vel_msg)

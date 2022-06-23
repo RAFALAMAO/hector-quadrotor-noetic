@@ -9,8 +9,8 @@ import math
 import rospy
 
 
-root = tk.Tk(className="Hector Quadrotor Lider")
-root.title("Hector Quadrotor Lider")
+root = tk.Tk(className="Hector Quadrotor Follower")
+root.title("Hector Quadrotor Follower")
 
 # Imagen de icono
 iconImg = """iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAE4klEQVRoge2YW2wUVRjHf+fMXqHGECVB5Vq8EJW
@@ -64,15 +64,15 @@ def pose_callback(data):
 def rot_callback(data):
     z_o.set("{0:.2f}".format( math.degrees(quaterionToRads(data)) ))
 
-rospy.init_node('HectorQ_GUI_Lider', anonymous=False)
+rospy.init_node('HectorQ_GUI_Seguidor', anonymous=False)
 #Subscribers
-posicionLider_sub = rospy.Subscriber("/uav1/ground_truth/state", Odometry , pose_callback)
-orientaLider_sub = rospy.Subscriber("/uav1/ground_truth_to_tf/pose", PoseStamped , rot_callback)
+posicionLider_sub = rospy.Subscriber("/uav2/ground_truth/state", Odometry , pose_callback)
+orientaLider_sub = rospy.Subscriber("/uav2/ground_truth_to_tf/pose", PoseStamped , rot_callback)
 
 #Publishers
 takeoff_pub = rospy.Publisher('/ardrone/takeoff', Empty, queue_size=1)
 land_pub = rospy.Publisher('/ardrone/land', Empty, queue_size=1)
-vel_pub = rospy.Publisher('/uav1/cmd_vel', Twist, queue_size=1)
+vel_pub = rospy.Publisher('/uav2/cmd_vel', Twist, queue_size=1)
 
 def setText(text):
     ttk.Label(mainframe, text="              ").grid(column=3, row=1, sticky=tk.W)
@@ -137,13 +137,13 @@ def left_fun():
     vel_pub.publish(vel_msg)
 
 def cw_fun():
-    setText("CW")
+    setText("Turn Right")
     vel_msg = Twist()
     vel_msg.angular.z = float(-1.0)
     vel_pub.publish(vel_msg)
 
 def ccw_fun():
-    setText("CCW")
+    setText("Turn Left")
     vel_msg = Twist()
     vel_msg.angular.z = float(1.0)
     vel_pub.publish(vel_msg)
@@ -161,18 +161,18 @@ ttk.Label(mainframe, text="Yaw (°)").grid(column=4, row=3, sticky=tk.W)
 #-------------- Despliegue datos de odometria y altura -------------------------
 
 #---------------------------- Botones de Control -------------------------------
-ttk.Button(mainframe, text="Giro CCW", command=ccw_fun).grid(column=1, row=5, sticky=tk.W)
-ttk.Button(mainframe, text="Adelante", command=forward_fun).grid(column=2, row=5, sticky=tk.W)
-ttk.Button(mainframe, text="Giro CW", command=cw_fun).grid(column=3, row=5, sticky=tk.W)
+ttk.Button(mainframe, text="Turn Left", command=ccw_fun).grid(column=1, row=5, sticky=tk.W)
+ttk.Button(mainframe, text="Fordward", command=forward_fun).grid(column=2, row=5, sticky=tk.W)
+ttk.Button(mainframe, text="Turn Right", command=cw_fun).grid(column=3, row=5, sticky=tk.W)
 
 
-ttk.Button(mainframe, text="Izquierda", command=left_fun).grid(column=1, row=6, sticky=tk.W)
+ttk.Button(mainframe, text="Left", command=left_fun).grid(column=1, row=6, sticky=tk.W)
 ttk.Button(mainframe, text="Hover", command=hover_pub).grid(column=2, row=6, sticky=tk.W)
-ttk.Button(mainframe, text="Derecha", command=right_fun).grid(column=3, row=6, sticky=tk.W)
+ttk.Button(mainframe, text="Right", command=right_fun).grid(column=3, row=6, sticky=tk.W)
 
-ttk.Button(mainframe, text="Arriba", command=up_fun).grid(column=1, row=7, sticky=tk.W)
-ttk.Button(mainframe, text="Atras", command=backward_fun).grid(column=2, row=7, sticky=tk.W)
-ttk.Button(mainframe, text="Abajo", command=down_fun).grid(column=3, row=7, sticky=tk.W)
+ttk.Button(mainframe, text="Up", command=up_fun).grid(column=1, row=7, sticky=tk.W)
+ttk.Button(mainframe, text="Backward", command=backward_fun).grid(column=2, row=7, sticky=tk.W)
+ttk.Button(mainframe, text="Down", command=down_fun).grid(column=3, row=7, sticky=tk.W)
 #---------------------------- Botones de Control -------------------------------
 
 
