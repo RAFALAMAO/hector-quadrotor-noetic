@@ -1,6 +1,8 @@
 # hector_quadrotor ported to ROS Noetic & Gazebo 11
 
-<img src="imgs/dron_photo.png" height="250"/> <img src="imgs/dron_photo_rviz.png" height="250"/>
+<div style="display: flex; justify-content: space-evenly">
+    <img src="imgs/dron_photo.png" height="250"/> <img src="imgs/dron_photo_rviz.png" height="250"/>
+</div>
 
 ***.:: First version, please tell me the issues or help me to fix it ::.***
 
@@ -35,16 +37,49 @@ IV. Repeat step II.
 
 Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `hector_quadrotor_demo` packages (only these work at the momment, but you can try the other ones):
 
-* `roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch`
-* `roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch`
-* `roslaunch hector_quadrotor_demo outdoor_flight_gazebo_no_rviz.launch`
-* `roslaunch hector_quadrotor_demo two_drones_empty.launch`
+* Run the following for one drone inside a empty world:
+    ```sh
+    roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch
+    ```
+* Run the following for one dron outdoor:
+    ```sh
+    roslaunch hector_quadrotor_demo outdoor_flight_gazebo.launch
+    ```
+* Run the following for one dron outdoor without rviz interface:
+    ```sh
+    roslaunch hector_quadrotor_demo outdoor_flight_gazebo_no_rviz.launch
+    ```
+* Run the following for two drones inside a empty world:
+    ```sh
+    roslaunch hector_quadrotor_demo two_drones_empty.launch
+    ```
 
-You can control it with teleop_twist_keyboard.
-* `git clone https://github.com/ros-teleop/teleop_twist_keyboard`
+## You can control it with:
+* teleop_twist_keyboard.
+    ```sh
+    git clone https://github.com/ros-teleop/teleop_twist_keyboard
+    ```
+* User interface, shared by my friend [__anderdefector__](https://github.com/anderdefector) and adapted by me. You can find the code in __hector_ui/src__ folder of this repo.
+    * Run the following for one dron ui:
+        ```sh
+        rosrun hector_ui ui_hector_quad.py
+        ```
+    * If you are working with `two_drones_empty.launch`.
+        * Run the following for leader dron ui:
+            ```sh
+            rosrun hector_ui ui_hector_quad_leader.py
+            ```
+        * Run the following for follower dron ui:
+            ```sh
+            rosrun hector_ui ui_hector_quad_follower.py
+            ```
+    * __Note:__ `Land` and `Take Off` buttons don't work with `hector_quadrotor`.
+
 
 ## Test
 
 Here is a [video](https://www.youtube.com/watch?v=-2IWfZjqoNc) testing it:
 
-<img src="imgs/gif.GIF"/>
+<div style="display: flex; justify-content: center;">
+    <a href="https://www.youtube.com/watch?v=-2IWfZjqoNc"><img src="imgs/gif.GIF"/></a>
+</div>
