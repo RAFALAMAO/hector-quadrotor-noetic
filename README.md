@@ -60,6 +60,8 @@ Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `
     git clone https://github.com/ros-teleop/teleop_twist_keyboard
     ```
 * User interface, shared by my friend [__anderdefector__](https://github.com/anderdefector) and adapted by me. You can find the code in __hector_ui/src__ folder of this repo.
+    <br/>
+    <img width="250" src="imgs/UI.png"/>
     * Run the following for one dron ui:
         ```sh
         rosrun hector_ui ui_hector_quad.py
