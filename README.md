@@ -35,9 +35,9 @@ IV. Repeat step II.
 
 ## Usage
 
-Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `hector_quadrotor_demo` packages (only these work at the momment, but you can try the other ones):
+Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `hector_quadrotor_demo` packages (only these work at the momment, but you can try other ones):
 
-* Run the following for one drone inside a empty world:
+* Run the following for one drone inside an empty world:
     ```sh
     roslaunch hector_quadrotor_gazebo quadrotor_empty_world.launch
     ```
@@ -49,7 +49,7 @@ Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `
     ```sh
     roslaunch hector_quadrotor_demo outdoor_flight_gazebo_no_rviz.launch
     ```
-* Run the following for two drones inside a empty world:
+* Run the following for two drones inside an empty world:
     ```sh
     roslaunch hector_quadrotor_demo two_drones_empty.launch
     ```
@@ -59,7 +59,7 @@ Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `
     ```sh
     git clone https://github.com/ros-teleop/teleop_twist_keyboard
     ```
-* User interface, shared by my friend [__anderdefector__](https://github.com/anderdefector) and adapted by me. You can find the code in __hector_ui/src__ folder of this repo.
+* User interface, shared by my friend [__anderdefector__](https://github.com/anderdefector) and adapted by me. You can find the code in __hector_ui/src__ folder inside this repo.
     <br/>
     <img width="250" src="imgs/UI.png"/>
     * Run the following for one dron ui:
