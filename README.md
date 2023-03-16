@@ -59,6 +59,7 @@ Run a simulation by executing the launch file in `hector_quadrotor_gazebo` and `
     ```sh
     git clone https://github.com/ros-teleop/teleop_twist_keyboard
     ```
+  **Note:** check use in: https://github.com/ros-teleop/teleop_twist_keyboard
 * User interface, shared by my friend [__anderdefector__](https://github.com/anderdefector) and adapted by me. You can find the code in __hector_ui/src__ folder inside this repo.
     <br/>
     <img width="250" src="imgs/UI.png"/>
